@@ -20,6 +20,16 @@ public class ShowOffersForUserServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
 		
+		handleRequest(req, resp);
+	}
+	public void doPost(HttpServletRequest req, HttpServletResponse resp)
+	throws IOException {
+
+		handleRequest(req, resp);
+	}
+	
+	private void handleRequest(HttpServletRequest req, HttpServletResponse resp) throws IOException{
+		
 		resp.setContentType("text/plain");
 		
 		String userEmail = req.getParameter("userEmail");
@@ -48,17 +58,20 @@ public class ShowOffersForUserServlet extends HttpServlet {
 	    		out.print(gson.toJson(rideRequest));
 	    	}
 	    	for (RideOffer rideOffer: rideOffers){
-	    		out.print(gson.toJson(rideOffer));
+	    		out.print(gson.toJson(rideOffer));	    		
 	    	}
-	    	
 	    }
 	    else{
+	    	out.print("<html><head></head><body>");
 	    	for (RideRequest rideRequest: rideRequests){
+	    		out.print("");
+	    		out.print("<br/>");
 	    	}
 	    	for (RideOffer rideOffer: rideOffers){
 	    		
+	    		out.print("<br/>");
 	    	}
-	    	
+	    	out.print("</body></html>");	    	
 	    }
 	    
 	    
