@@ -57,13 +57,8 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<url-pattern>/lscarpooling</url-pattern>
 	</servlet-mapping>
 
-	<servlet>
-		<servlet-name>ConfirmRide</servlet-name>
-		<servlet-class>org.localstorm.carpool.ConfirmRideServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>ConfirmRide</servlet-name>
-		<url-pattern>/confirmride</url-pattern>
+
+		
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
