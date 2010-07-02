@@ -13,16 +13,16 @@ public class RideOffer {
     private Long id;
 	
 	@Persistent
-	private float fromX;
+	private double fromX;
 	@Persistent
-	private float fromY;
+	private double fromY;
 	@Persistent
 	private String fromName;
 	
 	@Persistent
-	private float toX;
+	private double toX;
 	@Persistent
-	private float toY;
+	private double toY;
 	@Persistent
 	private String toName;
 	
@@ -35,19 +35,19 @@ public class RideOffer {
 	@Persistent
 	private Long timeFlexibility; // in minutes
 
-	public float getFromX() {
+	public double getFromX() {
 		return fromX;
 	}
 
-	public void setFromX(float fromX) {
+	public void setFromX(double fromX) {
 		this.fromX = fromX;
 	}
 
-	public float getFromY() {
+	public double getFromY() {
 		return fromY;
 	}
 
-	public void setFromY(float fromY) {
+	public void setFromY(double fromY) {
 		this.fromY = fromY;
 	}
 
@@ -59,19 +59,19 @@ public class RideOffer {
 		this.fromName = fromName;
 	}
 
-	public float getToX() {
+	public double getToX() {
 		return toX;
 	}
 
-	public void setToX(float toX) {
+	public void setToX(double toX) {
 		this.toX = toX;
 	}
 
-	public float getToY() {
+	public double getToY() {
 		return toY;
 	}
 
-	public void setToY(float toY) {
+	public void setToY(double toY) {
 		this.toY = toY;
 	}
 
@@ -109,6 +109,21 @@ public class RideOffer {
 
 	public Long getId() {
 		return id;
+	}
+
+	public RideOffer(double fromX, double fromY, String fromName, double toX,
+			double toY, String toName, Long userId, Date date,
+			Long timeFlexibility) {
+		super();
+		this.fromX = fromX;
+		this.fromY = fromY;
+		this.fromName = fromName;
+		this.toX = toX;
+		this.toY = toY;
+		this.toName = toName;
+		this.userId = userId;
+		this.date = date;
+		this.timeFlexibility = timeFlexibility;
 	}
 	
 	
