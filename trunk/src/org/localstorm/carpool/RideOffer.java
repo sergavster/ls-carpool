@@ -8,6 +8,8 @@ import javax.jdo.annotations.PrimaryKey;
 
 @PersistenceCapable
 public class RideOffer {
+	private enum Status {OFFERED, PENDING, FINALIZED} 
+
 	@PrimaryKey
     @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
     private Long id;
@@ -35,6 +37,12 @@ public class RideOffer {
 	@Persistent
 	private Long timeFlexibility; // in minutes
 
+	@Persistent
+	private Status status;
+	
+	@Persistent
+	private Long pendingUser; // id of User who bid for this ride  
+	
 	public double getFromX() {
 		return fromX;
 	}
@@ -124,6 +132,8 @@ public class RideOffer {
 		this.userId = userId;
 		this.date = date;
 		this.timeFlexibility = timeFlexibility;
+		this.status = Status.OFFERED;
+		this.pendingUser = null;
 	}
 	
 	

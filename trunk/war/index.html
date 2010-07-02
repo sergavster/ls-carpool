@@ -9,18 +9,33 @@
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>Hello App Engine</title>
+    <title>Carpool Now</title>
   </head>
 
   <body>
-    <h1>Hello App Engine</h1>
+    <h1>Hello Carpool Now</h1>
 	
     <table>
       <tr>
         <td colspan="2" style="font-weight:bold;">Available Servlets:</td>        
       </tr>
       <tr>
-        <td></td>
+        <td><a href="riderequest?email=fromX=0&fromY=0&fromName=TelAviv&toX=1&toY=1&toName=KfarSaba&userEmail=sapirboaz@gmail.com&flexibility=0&rideDate=10/10/2010">Request ride</a></td>
+      </tr>
+      <tr>
+        <td><a href="rideoffer?fromX=0&fromY=0&fromName=TelAviv&toX=1&toY=1&toName=KfarSaba&userEmail=sapirboaz@gmail.com&flexibility=0&rideDate=10/10/2010">Offer ride</a></td>
+      </tr>
+      <tr>
+        <td><a href="showoffersforuser?email=a@example.com">Show rides to user</a></td>
+      </tr>
+      <tr>
+        <td><a href="showoffersfordriver?email=a@example.com">Show rides to driver</a></td>
+      </tr>
+      <tr>
+        <td><a href="userconfirmsride?email=a@example.com&offerid=1">User confirms drive</a></td>
+      </tr>
+      <tr>
+        <td><a href="driverconfirmsride?email=a@example.com&">Driver confirms drive</a></td>
       </tr>
     </table>
   </body>

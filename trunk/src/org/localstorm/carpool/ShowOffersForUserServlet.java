@@ -42,13 +42,13 @@ public class ShowOffersForUserServlet extends HttpServlet {
 	    
 	    String userAgent = req.getHeader("user-agent");
 	    PrintWriter out = resp.getWriter();
+		Gson gson = new Gson();
 	    if(!userAgent.contains("iPhone")){
 	    	for (RideRequest rideRequest: rideRequests){
-	    		Gson gson = new Gson();
 	    		out.print(gson.toJson(rideRequest));
 	    	}
 	    	for (RideOffer rideOffer: rideOffers){
-	    		
+	    		out.print(gson.toJson(rideOffer));
 	    	}
 	    	
 	    }

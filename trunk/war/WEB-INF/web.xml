@@ -12,7 +12,8 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>ShowOffersForUser</servlet-name>
 		<url-pattern>/showoffersforuser</url-pattern>
 	</servlet-mapping>
-			<servlet>
+
+	<servlet>
 		<servlet-name>RideRequest</servlet-name>
 		<servlet-class>org.localstorm.carpool.RideRequestServlet</servlet-class>
 	</servlet>
@@ -20,7 +21,8 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>RideRequest</servlet-name>
 		<url-pattern>/riderequest</url-pattern>
 	</servlet-mapping>
-		<servlet>
+
+	<servlet>
 		<servlet-name>RideRequest</servlet-name>
 		<servlet-class>org.localstorm.carpool.RideRequestServlet</servlet-class>
 	</servlet>
@@ -28,7 +30,8 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>RideRequest</servlet-name>
 		<url-pattern>/riderequest</url-pattern>
 	</servlet-mapping>
-			<servlet>
+
+	<servlet>
 		<servlet-name>RideOffer</servlet-name>
 		<servlet-class>org.localstorm.carpool.RideOfferServlet</servlet-class>
 	</servlet>
@@ -36,7 +39,8 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>RideOffer</servlet-name>
 		<url-pattern>/rideoffer</url-pattern>
 	</servlet-mapping>
-		<servlet>
+
+	<servlet>
 		<servlet-name>Rides</servlet-name>
 		<servlet-class>org.localstorm.carpool.RidesServlet</servlet-class>
 	</servlet>
@@ -44,6 +48,16 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>Rides</servlet-name>
 		<url-pattern>/rides</url-pattern>
 	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ConfirmRide</servlet-name>
+		<servlet-class>org.localstorm.carpool.ConfirmRideServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ConfirmRide</servlet-name>
+		<url-pattern>/confirmride</url-pattern>
+	</servlet-mapping>
+	
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
