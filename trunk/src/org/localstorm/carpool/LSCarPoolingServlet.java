@@ -19,8 +19,8 @@ public class LSCarPoolingServlet extends HttpServlet {
 		
 		try{
 			
-//			User user = new User("sapirboaz@gmail.com", "Boaz", "Sapir", "0541111111");
-//			pm.makePersistent(user);
+		User user = new User("sapirboaz@gmail.com", "Boaz", "Sapir", "0541111111");
+			pm.makePersistent(user);
 //			RideRequest rideRequest = new RideRequest(0.0,0.0,"northPole", 20.0, 20.0, "Jerusalem",user.getId(), new Date(), 10L);
 //			pm.makePersistent(rideRequest);			
 //			RideOffer rideOffer = new RideOffer(0.0,0.0,"northPole", 20.01, 20.01, "TelAviv",user.getId(), new Date(), 10L);
