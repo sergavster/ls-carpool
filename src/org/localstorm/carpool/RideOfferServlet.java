@@ -75,17 +75,18 @@ public class RideOfferServlet extends HttpServlet {
 	    }
 	    User user = users.get(0);
 	    
+	    RideOffer rideOffer = null;
 	    try{
-		RideOffer rideOffer = new RideOffer(fromX,fromY,fromName, toX, toY, toName,user.getId(), date,flexibilityNumer );
+		rideOffer = new RideOffer(fromX,fromY,fromName, toX, toY, toName,user.getId(), date,flexibilityNumer );
 		pm.makePersistent(rideOffer);
 	    }finally{
 	    	pm.close();
 	    }
-	    
-	    
+//	   resp.getWriter().println("<html><head><meta http-equiv="refresh"></head></html>') 
+	    req.setAttribute("offer", rideOffer);
 		
      try {
-		req.getRequestDispatcher("WEB-INF/jsp/offerSuccess.jsp").forward(req, resp);
+		req.getRequestDispatcher("/WEB-INF/jsp/offerSuccess.jsp").forward(req, resp);
 	} catch (ServletException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
