@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Locale;
 
 import javax.jdo.PersistenceManager;
+import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
 
@@ -72,15 +73,28 @@ public class RideRequestServlet extends HttpServlet {
 	    }
 	    User user = users.get(0);
 	    
+	    RideRequest rideRequest = null;
 	    try{
-		RideRequest rideRequest = new RideRequest(fromX,fromY,fromName, toX, toY, toName,user.getId(), date,flexibilityNumer );
+		rideRequest = new RideRequest(fromX,fromY,fromName, toX, toY, toName,user.getId(), date,flexibilityNumer );
 		pm.makePersistent(rideRequest);
 	    }finally{
 	    	pm.close();
 	    }
 	    
+		pm = PMF.get().getPersistenceManager();		    
+
 	    
-		
+		query = "select from " + RideOffer.class.getName();
+	    List<RideOffer> rideOffers = (List<RideOffer>)pm.newQuery(query).execute();
+	    
+	    req.setAttribute("request", rideRequest);
+	    req.setAttribute("offersList", rideOffers);
+	     try {
+	 		req.getRequestDispatcher("/WEB-INF/jsp/requestSuccess.jsp").forward(req, resp);
+	 	} catch (ServletException e) {
+	 		// TODO Auto-generated catch block
+	 		e.printStackTrace();
+	 	}
 
 	}
 }
