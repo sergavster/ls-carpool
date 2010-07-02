@@ -5,12 +5,36 @@ xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	<servlet>
-		<servlet-name>LSCarPooling</servlet-name>
-		<servlet-class>org.localstorm.carpool.LSCarPoolingServlet</servlet-class>
+		<servlet-name>ShowOffersForUser</servlet-name>
+		<servlet-class>org.localstorm.carpool.ShowOffersForUserServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>LSCarPooling</servlet-name>
-		<url-pattern>/lscarpooling</url-pattern>
+		<servlet-name>ShowOffersForUser</servlet-name>
+		<url-pattern>/showoffersforuser</url-pattern>
+	</servlet-mapping>
+			<servlet>
+		<servlet-name>RideRequest</servlet-name>
+		<servlet-class>org.localstorm.carpool.RideRequestServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RideRequest</servlet-name>
+		<url-pattern>/riderequest</url-pattern>
+	</servlet-mapping>
+		<servlet>
+		<servlet-name>RideRequest</servlet-name>
+		<servlet-class>org.localstorm.carpool.RideRequestServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RideRequest</servlet-name>
+		<url-pattern>/riderequest</url-pattern>
+	</servlet-mapping>
+			<servlet>
+		<servlet-name>RideOffer</servlet-name>
+		<servlet-class>org.localstorm.carpool.RideOfferServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RideOffer</servlet-name>
+		<url-pattern>/rideoffer</url-pattern>
 	</servlet-mapping>
 		<servlet>
 		<servlet-name>Rides</servlet-name>
