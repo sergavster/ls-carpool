@@ -30,12 +30,12 @@ public class RideRequestServlet extends HttpServlet {
 		
 		resp.setContentType("text/plain");
 		
-		double fromX = Double.parseDouble(req.getParameter("fromX"));
-		double fromY = Double.parseDouble(req.getParameter("fromY"));
+		double fromX = Double.parseDouble((String)req.getParameter("fromX"));
+		double fromY = Double.parseDouble((String)req.getParameter("fromY"));
 		String fromName = req.getParameter("fromName");
 		
-		double toX = Double.parseDouble(req.getParameter("toX"));
-		double toY = Double.parseDouble(req.getParameter("toY"));
+		double toX = Double.parseDouble((String)req.getParameter("toX"));
+		double toY = Double.parseDouble((String)req.getParameter("toY"));
 		String toName = req.getParameter("toName");
 		String rideDate = req.getParameter("rideDate");
 		String flexibility = req.getParameter("flexibility");

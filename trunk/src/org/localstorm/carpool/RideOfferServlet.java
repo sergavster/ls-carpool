@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Locale;
 
 import javax.jdo.PersistenceManager;
+import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
 
@@ -32,12 +33,12 @@ public class RideOfferServlet extends HttpServlet {
 		
 		resp.setContentType("text/plain");
 		
-		double fromX = Double.parseDouble(req.getParameter("fromX"));
-		double fromY = Double.parseDouble(req.getParameter("fromY"));
+		double fromX = Double.parseDouble((String)req.getParameter("fromX"));
+		double fromY = Double.parseDouble((String)req.getParameter("fromY"));
 		String fromName = req.getParameter("fromName");
 		
-		double toX = Double.parseDouble(req.getParameter("toX"));
-		double toY = Double.parseDouble(req.getParameter("toY"));
+		double toX = Double.parseDouble((String)req.getParameter("toX"));
+		double toY = Double.parseDouble((String)req.getParameter("toY"));
 		String toName = req.getParameter("toName");
 		String rideDate = req.getParameter("rideDate");
 		String flexibility = req.getParameter("flexibility");
@@ -83,6 +84,11 @@ public class RideOfferServlet extends HttpServlet {
 	    
 	    
 		
-
+     try {
+		req.getRequestDispatcher("WEB-INF/jsp/offerSuccess.jsp").forward(req, resp);
+	} catch (ServletException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
 	}
 }
